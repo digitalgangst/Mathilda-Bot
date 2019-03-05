@@ -43,7 +43,20 @@ def handle(msg):
         print(e)
         pass
 
+    functions = '''
+You can chat with me. I can respond some commands if you call `mathilda` in pm or supergroup chat.
+
+[+] `mathilda help`
+[+] `mathilda search_pdf book_name`
+[+] `mathilda pastebin_raw query pastebin.com num_result`
+\
+'''
+
     if ('mathilda') in message2 or ('Mathilda') in message2:
+        
+        if ('help') in message2:
+            bot.sendMessage(chat_id, '%s' % (functions), reply_to_message_id=msg_id, parse_mode='Markdown')
+
         if ('search_pdf') in message2:
 
             query = message2.replace('mathilda', '')
@@ -103,7 +116,7 @@ def handle(msg):
     print('%s: %s' % (user_user, message2))
 
 
-bot = telepot.Bot('YOUR TOKEN API HERE')
+bot = telepot.Bot('760224003:AAGBSYwMcnKvP0kRX3rc4g52y7_NlZQFHW8')
 bot.message_loop(handle)
 print('Online!')
 

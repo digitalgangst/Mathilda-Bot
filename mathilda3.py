@@ -103,7 +103,7 @@ def handle(msg):
     print('%s: %s' % (user_user, message2))
 
 
-bot = telepot.Bot('760224003:AAGBSYwMcnKvP0kRX3rc4g52y7_NlZQFHW8')
+bot = telepot.Bot('YOUR TOKEN API HERE')
 bot.message_loop(handle)
 print('Online!')
 
